@@ -97,6 +97,7 @@ body {
   cursor: pointer;
 }
 
+
 /**
 * ! Shop styles are here
 **/
@@ -109,17 +110,7 @@ body {
   margin-bottom: 40px;
 }
 
-@media (max-width: 1080px) {
-  .shop {
-    grid-template-columns: repeat(2, 244px);
-  }
-}
 
-@media (max-width: 550px) {
-  .shop {
-    grid-template-columns: repeat(1, 244px);
-  }
-}
 
 .item {
   border: 2px solid #2125298c;
@@ -127,6 +118,7 @@ body {
   box-shadow: 18px 0px 87px 0px rgba(9.999999999999996, 15.000000000000034, 70, 0.07);
 
 }
+
 
 .item>.details {
   display: flex;
@@ -145,10 +137,11 @@ body {
   font-size: 14px;
 
 }
-.item> img {
+
+.item>img {
   width: 100%;
   border-radius: 2px 2px 0 0;
-
+  object-fit: cover;
 }
 
 .price {
@@ -183,14 +176,16 @@ body {
   margin: 20vh 0 3vh 0;
 }
 
-.label > h2 {
+.label>h2 {
   color: #212529;
 }
 
 
- 
 
-.homeBtn, .checkout, .clear {
+
+.homeBtn,
+.checkout,
+.clear {
   background-color: #212529;
   color: #fff;
   border: none;
@@ -200,10 +195,12 @@ body {
   cursor: pointer;
   font-size: 15px;
 }
+
 .checkout {
   background-color: #69e969;
 }
-.clear{
+
+.clear {
   background-color: #ff4321;
 }
 
@@ -260,4 +257,76 @@ body {
   font-size: 20px;
   cursor: pointer;
   text-transform: lowercase;
+}
+
+
+
+@media (max-width: 1080px) {
+  .shop {
+    grid-template-columns: repeat(2, 244px);
+  }
+}
+
+@media (max-width: 550px) {
+  .shop {
+    grid-template-columns: repeat(1, 224px);
+  }
+
+  .navbar {
+    padding: 25px 35px;
+  }
+
+  .navbar a h2,
+  .label>h2 {
+    font-size: 15px;
+  }
+
+  .homeBtn,
+  .checkout,
+  .clear {
+    font-size: 10px;
+  }
+
+  .cart>img,
+  .buttons>img {
+    width: 20px;
+  }
+
+  .logo img {
+    width: 20px;
+  }
+
+  .title-price p,
+  .details h3,
+  .buttons>.quantity,
+  .card-item-price {
+    font-size: 13px;
+  }
+
+  .x-btn {
+    top: -12px;
+    right: -9px;
+  }
+  .title-price-x, .title-price {
+    gap: 7px;
+    margin-right: 3px;
+}
+.shopping-cart {
+  grid-template-columns: repeat(1, 300px);
+}
+.buttons>img {
+  width: 13px;
+}
+.cart-item>.details {
+  gap: 16px;
+}
+
+.cartAmount {
+  top: -10px;
+  right: -7px;
+  font-size: 10px;
+}
+
+
+
 }
