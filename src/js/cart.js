@@ -17,7 +17,7 @@ let generateCardItems = () => {
         let { name, price, img } = search;
         return  `
           <div class="cart-item">
-            <img width="120" src=${img} alt="" />
+            <img id="cart-img" src=${img} alt="" />
             <div class="details">
               <div class="title-price-x">
                 <h4 class="title-price">
@@ -32,7 +32,8 @@ let generateCardItems = () => {
             ${item}
             </div>
           <img src="icons/plus-lg.svg" onclick="increment(${id})" alt="">
-          </div> <h3>$ ${item * search.price}</h3>
+          </div> 
+          <h3>Total:    $ ${item * search.price}</h3>
             </div>
           </div>
 `;

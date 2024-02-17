@@ -30,7 +30,7 @@ let shopItemsData = [
   },
   {
     id: "505",
-    name: "Mens Tie",
+    name: "Men Tie",
     price: 25,
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
     img: "images/img-5.webp",

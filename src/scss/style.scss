@@ -2,35 +2,7 @@
 * ! HTML styles are here
 **/
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-*::selection {
-  background-color: #000;
-  color: #fff;
-}
-
-body::-webkit-scrollbar {
-  background: transparent;
-  width: 14px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: grey;
-  border-radius: 20px;
-  border: 3px solid #fff;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background-color: #0000009e;
-}
-
-body {
-  font-family: sans-serif;
-}
+@forward "globals";
 
 /**
 * ! Navbar styles are here
@@ -92,35 +64,31 @@ body {
   border-radius: 2px;
 }
 
-.cart>img,
-.buttons>img {
+.cart > img,
+.buttons > img {
   cursor: pointer;
 }
-
 
 /**
 * ! Shop styles are here
 **/
 .shop {
-  margin: 24vh 0 0 0;
+  margin-top: 24vh;
+  margin-bottom: 5vh;
   display: grid;
   grid-template-columns: repeat(4, 244px);
   justify-content: center;
   gap: 30px;
-  margin-bottom: 40px;
 }
-
-
 
 .item {
   border: 2px solid #2125298c;
   border-radius: 5px;
-  box-shadow: 18px 0px 87px 0px rgba(9.999999999999996, 15.000000000000034, 70, 0.07);
-
+  box-shadow: 18px 0px 87px 0px
+    rgba(9.999999999999996, 15.000000000000034, 70, 0.07);
 }
 
-
-.item>.details {
+.item > .details {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,16 +97,17 @@ body {
   gap: 10px;
 }
 
-.item>.details h3 {
+.item .details h3 {
   font-size: 18px;
 }
 
-.item>.details p {
-  font-size: 14px;
-
+.item > .details p {
+  font-weight: 200;
+  font-size: 1rem;
+  font-family: "Ubuntu", "Poppins", sans-serif;
 }
 
-.item>img {
+.item > img {
   width: 100%;
   border-radius: 2px 2px 0 0;
   object-fit: cover;
@@ -164,7 +133,7 @@ body {
   justify-content: flex-start;
 }
 
-.buttons>.quantity {
+.buttons > .quantity {
   font-size: 18px;
 }
 
@@ -176,12 +145,9 @@ body {
   margin: 20vh 0 3vh 0;
 }
 
-.label>h2 {
+.label > h2 {
   color: #212529;
 }
-
-
-
 
 .homeBtn,
 .checkout,
@@ -191,7 +157,7 @@ body {
   border: none;
   border-radius: 3px;
   padding: 6px;
-  margin-top: 10px;
+  margin: 1rem 0;
   cursor: pointer;
   font-size: 15px;
 }
@@ -206,11 +172,11 @@ body {
 
 .shopping-cart {
   display: grid;
-  grid-template-columns: repeat(1, 400px);
+  grid-template-columns: repeat(1, 500px);
   justify-content: center;
   justify-items: center;
   align-items: center;
-  gap: 20px;
+  gap: 50px;
   margin: 10px;
   margin-bottom: 4rem;
 }
@@ -219,17 +185,19 @@ body {
 * ! Cart items styles are here
 **/
 .cart-item {
+  position: relative;
   display: flex;
+  align-items: center;
   border: 2px solid #2125298c;
   border-radius: 6px;
   position: relative;
 }
 
-.cart-item>.details {
+.cart-item > .details {
   display: flex;
   flex-direction: column;
-  margin: 12px 6px;
-  gap: 15px;
+  margin: 12px;
+  gap: 3vw;
 }
 
 .title-price-x,
@@ -237,10 +205,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 17px;
   margin-right: 15px;
 }
-
+.title-price p,
+.details h3,
+.buttons > .quantity,
+.card-item-price {
+  font-size: 1.2rem;
+}
 .card-item-price {
   background-color: #212529;
   color: #fff;
@@ -250,24 +223,27 @@ body {
 }
 
 .x-btn {
-  position: relative;
-  top: -9px;
-  right: -11px;
-  color: red;
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  color: #212422;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  aspect-ratio: 1;
   font-size: 20px;
   cursor: pointer;
   text-transform: lowercase;
+  padding: 2px;
 }
 
-
-
-@media (max-width: 1080px) {
+@media only screen and (max-width: 991px) {
   .shop {
+    gap: 50px;
     grid-template-columns: repeat(2, 244px);
   }
 }
 
-@media (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .shop {
     grid-template-columns: repeat(1, 224px);
   }
@@ -277,19 +253,19 @@ body {
   }
 
   .navbar a h2,
-  .label>h2 {
-    font-size: 15px;
+  .label > h2 {
+    font-size: 1.2rem;
   }
 
   .homeBtn,
   .checkout,
   .clear {
-    font-size: 10px;
+    font-size: 1rem;
   }
 
-  .cart>img,
-  .buttons>img {
-    width: 20px;
+  .cart > img,
+  .buttons > img {
+    width: 7vw;
   }
 
   .logo img {
@@ -298,36 +274,40 @@ body {
 
   .title-price p,
   .details h3,
-  .buttons>.quantity,
+  .buttons > .quantity,
   .card-item-price {
-    font-size: 13px;
+    font-size: 1rem;
   }
 
   .x-btn {
-    top: -10px;
-    right: -2px;
+    top: 0px;
+    right: 0px;
+    background-color: #fff;
+    border-radius: 9%;
     font-size: 16px;
+    padding: 3px;
   }
-  .title-price-x, .title-price {
-    gap: 7px;
+  .title-price-x,
+  .title-price {
+    gap: 15px;
     margin-right: 3px;
-}
-.shopping-cart {
-  grid-template-columns: repeat(1, 300px);
-}
-.buttons>img {
-  width: 13px;
-}
-.cart-item>.details {
-  gap: 16px;
-}
+  }
+  .shopping-cart {
+    grid-template-columns: repeat(1, 100px);
+  }
+  .buttons > img {
+    width: 1rem;
+  }
+  .cart-item {
+    flex-direction: column;
+  }
+  .cart-item > .details {
+    gap: 3vh;
+  }
 
-.cartAmount {
-  top: -10px;
-  right: -7px;
-  font-size: 10px;
-}
-
-
-
+  .cartAmount {
+    top: -10px;
+    right: -7px;
+    font-size: 0.9rem;
+  }
 }

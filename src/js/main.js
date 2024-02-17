@@ -22,7 +22,7 @@ let generateShop = () => {
           <img src="icons/dash-lg.svg" onclick="decrement(${id})" alt="">
             <div id=${id} class="quantity">
             ${search.item === undefined ? 0 : search.item}
-            </div>
+</div>
           <img src="icons/plus-lg.svg" onclick="increment(${id})" alt="">
           </div>
         </div>
