@@ -232,8 +232,12 @@
     gap: 50px;
     grid-template-columns: repeat(2, 244px);
   }
+  .cart-item > .details {
+    gap: 3vh;
+  }
 }
 @media only screen and (max-width: 768px) {
+
   .title-price p,
   .details h3,
   .buttons > .quantity,
@@ -290,7 +294,7 @@
     width: 1rem;
   }
   .cart-item > .details {
-      gap: 3.4vh;
+      gap: 2.5vh;
     }
   
   .cartAmount {
