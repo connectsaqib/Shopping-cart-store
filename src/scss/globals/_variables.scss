@@ -37,12 +37,18 @@ a:active {
   body::-webkit-scrollbar-thumb:hover {
     background-color: #0000009e;
   }
+  .cart-item > #cart-img{
+      width: 200px;
+    }
 }
-.cart-item > #cart-img{
-    width: 200px;
-  }
+
+@media only screen and (max-width: 768px) {
+  .cart-item > #cart-img{
+  width: 170px;
+}
+}
 @media only screen and (max-width: 600px) {
   .cart-item > #cart-img{
-  width: 190px;
+  width: 140px;
 }
 }
